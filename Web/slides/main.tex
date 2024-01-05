@@ -1,0 +1,210 @@
+\documentclass{beamer}
+
+\usepackage{showexpl}
+\lstset
+{
+    language=[LaTeX]TeX,
+    breaklines=true,
+    basicstyle=\tt\scriptsize,
+    keywordstyle=\color{blue},
+    identifierstyle=\color{magenta},
+    numberstyle=\tiny\color{gray},
+    tabsize=2,
+    numbers=left,                    
+    numbersep=5pt,
+}
+
+
+\title{Computer Workshop}
+\subtitle{An intro to the web}
+\author{Dr. MalekiMajd}
+\institute[IUST]{Iran University Of Science And Technology}
+\date{6 Dey, 1402}
+
+\usetheme{Madrid}
+
+\begin{document}
+
+\begin{frame}
+    \maketitle
+\end{frame}
+
+\begin{frame}{What to expect}
+\begin{enumerate}
+    \item Have an introduction to the web
+    \item Learn about the web's history
+    \item Get to know GitHub pages
+    \item Setup a simple personal website
+\end{enumerate} 
+\end{frame}
+
+\begin{frame}{What's happening in the background}
+    Ever wondered what happens when you type in a URL and hit enter?
+    
+    There are a lot of things happening in the background, but we'll focus on the most important ones.
+\end{frame}
+
+\begin{frame}{What's happening in the background}
+    \begin{enumerate}
+        \item \textbf{DNS Resolutition}: The URL is translated to an IP address.
+        \item \textbf{Establishing a connection}: A TCP connection is established between the client and the server.
+        \item \textbf{Sending the request}: The client sends a request to the server.
+        \item \textbf{Processing the request}: The server processes the request and sends a response.
+        \item \textbf{Sending the response}: The server sends the response to the client.
+        \item \textbf{Rendering the response}: The client renders the response.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Note on the procedure}
+    The procedure is not always the same. For example, the client might cache the response and not send a request to the server.
+
+    Or many other scenarios that we won't get into right now. They will be covered in your assignment.
+\end{frame}
+
+\begin{frame}{A little bit of history}
+    \begin{itemize}
+        \item The web was invented by Tim Berners-Lee in 1989.
+        \item Tim Berners-Lee, a British scientist at CERN, proposed the concept of the web as a way to share information among researchers.
+        \item He developed the first web browser, called WorldWideWeb, and the first web server.
+        \item The web was initially designed as a simple system for linking documents using hypertext.
+        \item It quickly gained popularity and became the foundation of the modern internet.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{What is an IP?}
+    An IP (Internet Protocol) address is a unique numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication.
+    It serves two main purposes: identifying the host or network interface and providing the location of the device in the network.
+\end{frame}
+
+\begin{frame}{What is a URL?}
+    A URL (Uniform Resource Locator) is a unique identifier used to locate a resource on the internet. It's a string of characters that contains information about the location of a resource on the internet.
+\end{frame}
+
+\begin{frame}{How are URLs translated to IPs?}
+    The process of translating a URL to an IP address is called DNS resolution. DNS stands for Domain Name System. It's a system that translates domain names to IP addresses.
+\end{frame}
+
+\begin{frame}{Ports}
+    Ports are endpoints for communication in a computer network, allowing different applications to send and receive data.
+    They are identified by numbers and are used to route network traffic to the appropriate application or service.
+    \begin{itemize}
+        \item Ports facilitate communication between different applications in a computer network.
+        \item Each port is identified by a number, ranging from 0 to 65535.
+        \item Ports are used to route network traffic to the appropriate application or service running on a device.
+        \item Commonly used ports include port 80 for HTTP, port 443 for HTTPS, and port 22 for SSH.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{What are web servers?}
+    \begin{itemize}
+        \item A web server is a computer that stores web pages and responds to requests from clients.
+        \item You may have heard of Apache, Nginx, IIS, etc. These are all web servers.
+        \item You may purchase a web server and host your website on it. But there are other options.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{GitHub Pages comes into play!}
+    \begin{itemize}
+        \item GitHub Pages is a service offered by GitHub that allows you to host your website on GitHub's servers.
+        \item It's free!
+        \item It's easy to use!
+        \item It's fast!
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{What we will be focusing on?}
+    One of our goals is to learn how to use GitHub Pages to host our \textbf{portofolio} website. 
+\end{frame}
+
+\begin{frame}{What is a portofolio website?}
+    A portofolio website is a website that showcases your skills and projects. It's a great way to show off your skills to potential employers.
+\end{frame}
+
+\begin{frame}{Why bother with a portofolio website?}
+    \begin{itemize}
+        \item It's a great way to present yourself in a professional manner.
+        \item It's a great way to show off your skills.
+        \item It's a great way to show off your projects.
+        \item It's a great way to get hired/interned.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Let's get started}
+    As mentioned, we will be using github pages to host our website.
+
+    \begin{itemize}
+        \item First, you need to have a GitHub account. If you don't have one, create one.
+        \item Second, you need to create a repository named \textbf{username.github.io} where \textbf{username} is your GitHub username.
+        \item GitHub will automatically host your website at \textbf{username.github.io}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Getting the repository content}
+    You might ask where I can get the content of the repository. Well, you can either:
+    \begin{itemize}
+        \item Create the content yourself.
+        \item Use a template.
+    \end{itemize}
+    We will be focusing on a famous template. But you can use any template you want.
+
+    Also, in case we had the time, we will be focusing on how to create the content ourselves.
+\end{frame}
+
+\begin{frame}{Jekyll}
+    Jekyll is a static site generator. It's a tool that allows you to create static websites from templates.
+
+    It's the tool that GitHub uses to generate GitHub Pages.
+\end{frame}
+
+\begin{frame}{al-folio}
+    \textbf{al-folio} is a simple, clean, and responsive Jekyll theme for academics:
+    
+    \begin{itemize}
+        \item It provides a simple way to create a personal website which is suitable for academics.
+        \item It's easy to use.
+        \item It's easy to customize.
+        \item It's easy to deploy.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Getting started with al-folio}
+    The recommended approach for using al-folio is to first create your own site using the template with as few changes as possible, and only when it is up and running customize it however you like. 
+\end{frame}
+
+\begin{frame}{Steps to install}
+    This part is taken from the \textbf{al-folio} repository:
+    \begin{enumerate}
+        \item Create a new repository using this template. For this, click on \textbf{Use this template - Create a new repository} above the file list.
+        \item In this new repository, go to \textbf{Settings - Actions - General - Workflow permissions} and give Read and write permissions to GitHub Actions.
+        \item Open file \texttt{\_config.yml}, set url to \url{https://<your-github-username>.github.io} and leave baseurl empty.
+        \item Finally, in the repository page go to \textbf{Settings - Pages - Build and deployment}, make sure that \textbf{Source} is set to \textbf{Deploy from a branch} and set the branch to \textbf{gh-pages} (NOT to master).
+        \end{enumerate}
+\end{frame}
+
+\begin{frame}{The deployment process}
+    The deployment process is simple. You just need to push your changes to the repository and GitHub will automatically deploy your website.
+\end{frame}
+
+\begin{frame}{Customizing the website}
+    You are better off cloning the repository and customizing it locally. You can use any text editor you want. This makes the process much easier and hassle free.
+\end{frame}
+
+\begin{frame}{The config}
+    You may notice that there is a file named \texttt{\_config.yml}. This file contains the configuration of the website. You can change the configuration to your liking.
+
+    You may add your social media links, change the title of the website, change the description, etc.
+\end{frame}
+
+\begin{frame}{The content}
+    The content of the website is located in the \texttt{\_pages} directory. You can change the content of the pages to your liking.
+
+    You may add your own pages, remove the existing pages, etc.
+\end{frame}
+
+\begin{frame}{The posts}
+    The posts of the website are located in the \texttt{\_posts} directory. You can change the content of the posts to your liking.
+
+    You may add your own posts, remove the existing posts, etc.
+\end{frame}
+
+\end{document}

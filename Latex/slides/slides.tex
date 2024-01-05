@@ -1,0 +1,584 @@
+\documentclass{beamer}
+
+\usepackage{showexpl}
+
+\lstset
+{
+    language=[LaTeX]TeX,
+    breaklines=true,
+    basicstyle=\tt\scriptsize,
+    keywordstyle=\color{blue},
+    identifierstyle=\color{magenta},
+    numberstyle=\tiny\color{gray},
+    tabsize=2,
+    numbers=left,                    
+    numbersep=5pt,
+}
+
+\usetheme{Singapore}
+
+\title{Computer Workshop}
+\subtitle{\LaTeX}
+\author{Dr. MalekiMajd}
+\institute[IUST]{Iran University Of Science And Technology}
+\date{24 Aban, 1402}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{End Goals}
+\begin{enumerate}
+    \item Get to know about the LaTeX workflow and its advantages.
+    \item Be able to produce high-quality and professional documents.
+    \item Be able to produce academic-ready documents without hassle.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{What is \LaTeX?}
+\LaTeX, which is pronounced "Lah-tech" or "Lay-tech", is a document preparation system for high-quality typesetting. It is most often used for medium-to-large technical or scientific documents, but it can be used for almost any form of publishing.
+
+
+LaTeX is not a word processor! Instead, LaTeX encourages authors not to worry too much about the appearance of their documents but to concentrate on getting the right content.
+\end{frame}
+
+\begin{frame}{Why use \LaTeX?}
+\begin{itemize}
+    \item Allows you to focus on the \textit{content} of the document rather than worrying about the formatting.
+    \item Provides the creation of high quality documents.
+    \item Extremely customizable.
+    \item Your document is extremely stable. No matter how complex your documents are.
+    \item Extremely extensible with the use of packages.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Getting started}
+In order to convert your \LaTeX \ files into a human-readable format, you have to compile it.
+You generally have the ways down below to compile your \LaTeX \ files:
+\begin{enumerate}
+    \item Install a distribution and use the terminal to compile your documents. (TexLive is recommended)
+    \item Use an Online editor. (Overleaf)
+    \item Use a preconfigured editor (e.g. TeXstudio)
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Creating our first document}
+Let's start by creating our very basic document.
+
+\begin{LTXexample}
+\documentclass{article}
+\begin{document}
+Hello from the document!
+\end{document}
+\end{LTXexample}
+
+\begin{itemize}
+    \item \lstinline!\documentclass! specifies the document type, it can have different types like
+        \texttt{article, book, report...}
+    \item \lstinline!\begin{enviroment}\end{enviroment}! Starts and ends an environment respectively. 
+        Enviroments apply a certain formatting to the content inside them. Here, we start our document
+        with the \texttt{document} environment. This is where our document content goes.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Commands in \LaTeX}
+    Commands give you the power to further customize your document. Most LaTeX commands are simple words
+    preceded by a backslash character (\textbackslash).
+    
+    You can also put comments in your LaTeX file by using a \texttt{\%}.
+\end{frame}
+
+\begin{frame}{The preamble}
+In the previous slide we found out that the document content goes into the \texttt{document}
+environment. We also specified the document type before starting our document content. This
+part of the document is called the \textit{preamble}. It is essentially a place to further customize
+your document.
+\end{frame}
+
+\begin{frame}[fragile]{Adding a title page}
+
+Now, let's see how we can add a title page to our document. This is how it's done:
+\begin{enumerate}
+    \item Define the title, author, date and further information in the preamble.
+    \item Create the title using \lstinline!\maketitle! command.
+    \item Tell the compiler to allocate a whole page for the title page.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Adding a title page}
+\begin{LTXexample}
+\documentclass{article}
+
+\title{Sample LaTeX document}
+\author{CW Class}
+\institute{IUST}
+\date{24 Aban}
+
+\begin{document}
+\maketitle
+Hello from the document!
+\end{document}
+\end{LTXexample}
+\end{frame}
+
+\begin{frame}[fragile]{One-page title}
+You might notice that here, our title does not have a whole page allocated to it. In this case, LaTeX
+gives us the option to to add extra options to our \lstinline!\documentclass!:
+
+\begin{lstlisting}
+\documentclass[titlepage]{article}
+\end{lstlisting}
+You are slowly getting the hang of the syntax in LaTeX here, you might encounter this syntax in other
+places where you pass extra options to a command using the brackets.
+\end{frame}
+
+\begin{frame}[fragile]{Sections}
+You can structure your document by giving it sections, subsections, and more.
+\begin{lstlisting}
+\section{A section}
+\subsection{A subsection}
+\subsubsection{A subsubsection}
+\paragraph{A paragraph}
+\subparagraph{A subparagraph}
+\end{lstlisting}
+LaTeX by default will take care of the numbering so, you have more focus on the content.
+
+You can make the sections unnumbered by adding an asterisk after the command, before starting the name of
+the section: \lstinline!\section*{An unnumbered section}!
+\end{frame}
+
+
+\begin{frame}[fragile]{Starting a New Paragraph}
+To start a new paragraph in \LaTeX, leave a blank line in the source code or use the 
+\texttt{\textbackslash par} command. This creates a visual separation between paragraphs in the output document.
+
+You might notice that no matter how many spaces you put between your lines in the source code, no
+new lines will be added.
+
+\begin{lstlisting}
+\section{Test section}
+This is the content inside the test section.
+
+
+Extra new lines will have no effect!
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]{Adding a new line}
+    In case you want to add multiple new lines after each other, you can use the \texttt{\textbackslash newline} command.
+\begin{example}
+\begin{LTXexample}
+These \newline are \newline \newline some lines!
+\end{LTXexample}
+\end{example}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Text Formatting in \LaTeX: Bold, Italic, Underline}
+  Formatting your text to different styles should be pretty straight forward in \LaTeX, you
+  just need to use the following commands:
+\end{frame}
+
+\begin{frame}{Bold Text}
+  To make text \textbf{bold} in \LaTeX, use the \texttt{\textbackslash textbf\{\}} command.
+
+  \begin{example}
+    \texttt{\textbackslash textbf\{This text is bold.\}}
+  \end{example}
+\end{frame}
+
+\begin{frame}{Italic Text}
+  To make text \textit{italic} in \LaTeX, use the \texttt{\textbackslash textit\{\}} command.
+
+  \begin{example}
+    \texttt{\textbackslash textit\{This text is italic.\}}
+  \end{example}
+\end{frame}
+
+\begin{frame}{Underline Text}
+    To \underline{underline} text in \LaTeX, you can use the \texttt{\textbackslash underline\{\}} command.
+
+  \begin{example}
+    \texttt{\textbackslash underline\{This text is underlined.\}}
+  \end{example}
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Enumerate and Itemize in \LaTeX}
+  This is where environments come handy. You specify a specific environment for your content to be in.
+  In this case, we want our content to be in a bulleted list or a numbered list. Let's take a look how
+  we can achieve that.
+\end{frame}
+
+\begin{frame}[fragile]{Itemize Environment}
+  The \texttt{itemize} environment is used for creating bulleted lists. Each item is specified with the \texttt{\textbackslash item} command.
+
+  \begin{example}
+    \begin{LTXexample}
+    \begin{itemize}
+      \item First item
+      \item Second item
+      \item Third item
+    \end{itemize}
+    \end{LTXexample}
+  \end{example}
+\end{frame}
+
+\begin{frame}[fragile]{Enumerate Environment}
+  The \texttt{enumerate} environment is used for creating numbered lists. Each item is specified with the \texttt{\textbackslash item} command.
+
+  \begin{example}
+    \begin{LTXexample}
+    \begin{enumerate}
+      \item First item
+      \item Second item
+      \item Third item
+    \end{enumerate}
+    \end{LTXexample}
+  \end{example}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Mathematics in \LaTeX}
+
+  \begin{itemize}
+    \item \LaTeX{} provides a powerful and flexible environment for typesetting mathematical expressions.
+    \item Whether you need inline math for brief equations within text or display math for standalone equations, \LaTeX{} has you covered.
+    \item This slide explores the basics of including mathematical content in your \LaTeX{} documents.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Inline Math Mode}
+  Use single dollar signs (\$) for inline math mode. For example:
+
+\begin{example}
+\begin{LTXexample}
+The Pythagorean theorem is $a^2 + b^2 = c^2$.
+\end{LTXexample}
+\end{example}
+\end{frame}
+
+\begin{frame}[fragile]{Display Math Mode}
+  Use double dollar signs (\$\$) or \texttt{\textbackslash[} and \texttt{\textbackslash]} for display math mode. For example:
+
+\begin{example}
+\begin{LTXexample}
+$$E = mc^2$$
+
+or
+
+\[\int_{a}^{b} f(x) \,dx = F(b) - F(a)\]
+\end{LTXexample}
+\end{example}
+\end{frame}
+
+\begin{frame}{Math Symbols and Operators}
+  \LaTeX{} provides a wide range of symbols and operators for mathematical expressions.
+
+  \begin{example}
+    \begin{itemize}
+      \item Greek letters: $\alpha, \beta, \gamma$
+      \item Relations: $a < b, c \geq d, e \neq f$
+      \item Operators: $\sum_{i=1}^{n} x_i, \int_{a}^{b} f(x) \,dx$
+      \item Fractions: $\frac{a}{b}$
+      \item Roots: $\sqrt{2}, \sqrt[n]{x}$
+    \end{itemize}
+  \end{example}
+\end{frame}
+
+\begin{frame}[fragile]{Equation Numbering}
+  Use the \texttt{equation} environment for automatically numbered equations.
+
+\begin{example}
+\begin{LTXexample}
+\begin{equation}
+  x^2 + y^2 = r^2
+\end{equation}
+\end{LTXexample}
+\end{example}
+
+  To prevent numbering, use \texttt{\textbackslash begin\{equation*\}} and \texttt{\textbackslash end\{equation*\}}.
+\end{frame}
+
+\begin{frame}{Table of contents}
+  In \LaTeX, the table of contents (TOC) is generated automatically using the \texttt{\textbackslash tableofcontents} command.
+
+  \begin{itemize}
+    \item Place \texttt{\textbackslash tableofcontents} at the point in your document where you want the TOC to appear.
+    \item \LaTeX{} will automatically populate the TOC based on your document's structure.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Including Images in \LaTeX}
+
+  \begin{itemize}
+    \item \LaTeX{} allows seamless inclusion of images to enhance visual content.
+    \item The \texttt{graphicx} package provides essential tools for handling images.
+    \item This slide explores how to effectively include and customize images in your \LaTeX{} documents or presentations.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{The \texttt{graphicx} Package}
+  The \texttt{graphicx} package provides the \texttt{\textbackslash includegraphics} command to include images in your \LaTeX{} document.
+
+  \begin{example}
+    \begin{itemize}
+      \item[] \texttt{\textbackslash usepackage\{graphicx\}}
+      \item[] \texttt{\textbackslash includegraphics[options]\{filename\}}
+    \end{itemize}
+  \end{example}
+
+  Options can include width, height, scale, and more.
+\end{frame}
+
+\begin{frame}{Supported Image Formats}
+  \LaTeX{} supports various image formats, including:
+
+  \begin{itemize}
+    \item PNG
+    \item JPEG
+    \item PDF
+    \item EPS
+    \item ... and more
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Including an Image}
+  To include an image, use the \texttt{\textbackslash includegraphics} command:
+
+  \begin{example}
+    \begin{itemize}
+      \item[] \texttt{\textbackslash includegraphics[width=0.8\textbackslash textwidth]\{image.png\}}
+    \end{itemize}
+  \end{example}
+
+  This example scales the image to 80 percent of the text width.
+\end{frame}
+
+\begin{frame}{Figure Environment}
+  Wrap the \texttt{\textbackslash includegraphics} command in the \texttt{figure} environment for better image placement and to add captions.
+
+  \begin{example}
+    \begin{itemize}
+      \item[] \texttt{\textbackslash begin\{figure\}}
+      \item[] \texttt{\textbackslash centering}
+      \item[] \texttt{\textbackslash includegraphics[width=0.8\textbackslash textwidth]\{image.png\}}
+      \item[] \texttt{\textbackslash caption\{A descriptive caption.\}}
+      \item[] \texttt{\textbackslash end\{figure\}}
+    \end{itemize}
+  \end{example}
+\end{frame}
+
+\begin{frame}[fragile]{Image Demo}
+
+\begin{LTXexample}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{Tux.png}
+  \caption{A lovely penguin!}
+\end{figure}
+\end{LTXexample}
+
+\end{frame}
+
+\begin{frame}[fragile]{Image positioning}
+This figure environment supports positions as its extra options:
+\lstinline!\begin{figure}[h]\end{figure}!
+  
+\begin{table}
+  \caption{Different options}  \begin{tabular}{c|c}
+    h & Try to place it here \\
+    t & Top of the page\\
+    b & Bottom of the page\\
+    p & Put it on a separate page
+  \end{tabular}
+\end{table}
+
+\end{frame}
+
+\begin{frame}{Introduction to Tables}
+  Tables are essential for organizing and presenting data in a structured manner. In \LaTeX{}, you can create tables to suit various needs in documents or presentations.
+\end{frame}
+
+\begin{frame}{Basic Table Structure}
+  The basic structure of a table in \LaTeX{} involves the use of the \texttt{tabular} environment:
+
+  \begin{example}
+    \begin{itemize}
+      \item[] \texttt{\textbackslash begin\{tabular\}\{clr\}}
+      \item[] \texttt{Content \& More \& Text \textbackslash\textbackslash}
+      \item[] \texttt{\textbackslash end\{tabular\}}
+    \end{itemize}
+  \end{example}
+\end{frame}
+
+\begin{frame}{Basic Table Structure}
+  \begin{figure}
+  \begin{tabular}{clr}
+    Content & More & Text \\
+  \end{tabular}
+  \caption{Previous table}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}{Table Columns}
+  Specify the number and alignment of columns in the \texttt{tabular} environment:
+
+  \begin{example}
+    \begin{itemize}
+      \item[] \texttt{\textbackslash begin\{tabular\}\{lcc\} \% Alignment for each column}
+      \item[] \texttt{Left \& Center \& Center \textbackslash\textbackslash}
+      \item[] \texttt{\textbackslash end\{tabular\}}
+    \end{itemize}
+  \end{example}
+\end{frame}
+
+\begin{frame}{Table Columns}
+  \begin{figure}
+  \begin{tabular}{lcc}
+    Left & Center & Center \\
+  \end{tabular}
+  \caption{Previous table}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Adding Horizontal Lines}
+  Use \texttt{\textbackslash hline} to add horizontal lines to separate rows in a table:
+
+  \begin{example}
+    \begin{itemize}
+      \item[] \texttt{\textbackslash begin\{tabular\}\{clr\}}
+      \item[] \texttt{\textbackslash hline}
+      \item[] \texttt{Content \& More \& Text \textbackslash\textbackslash}
+      \item[] \texttt{\textbackslash hline}
+      \item[] \texttt{Content \& More \& Text \textbackslash\textbackslash}
+      \item[] \texttt{\textbackslash hline}
+      \item[] \texttt{\textbackslash end\{tabular\}}
+    \end{itemize}
+  \end{example}
+\end{frame}
+
+\begin{frame}{Adding Horizontal Lines}
+  \begin{figure}
+  \begin{tabular}{clr}
+    \hline
+    Content & More & Text \\
+    \hline
+    Content & More & Text \\
+    \hline
+  \end{tabular}
+  \caption{Previous table}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Adding Vertical Lines}
+  Use vertical bars to add vertical lines between columns:
+
+  \begin{example}
+    \begin{itemize}
+      \item[] \texttt{\textbackslash begin\{tabular\}\{|c|l|r|\}}
+      \item[] \texttt{Content \& More \& Text \textbackslash\textbackslash}
+      \item[] \texttt{\textbackslash end\{tabular\}}
+    \end{itemize}
+  \end{example}
+  \caption{Previous table}
+\end{frame}
+
+\begin{frame}[fragile]{Labeling in \LaTeX}
+  The \texttt{\textbackslash label\{key\}} command is used to label elements in \LaTeX, such as sections, figures, and tables.
+  This allows you to reference these elements later.
+
+\begin{example}
+\begin{lstlisting}
+\section{Introduction}
+\label{sec:intro}
+Content related to the section of intro...
+\end{lstlisting}
+\end{example}
+
+\end{frame}
+
+\begin{frame}{Referencing in \LaTeX}
+  To refer to labeled elements, use the \texttt{\textbackslash ref\{key\}} command.
+
+  \begin{example}
+    \begin{itemize}
+      \item[] \texttt{As discussed in Section \textbackslash ref\{sec:intro\}, ...}
+      \item[] \texttt{Figure \textbackslash ref\{fig:example\} illustrates ...}
+    \end{itemize}
+  \end{example}
+\end{frame}
+
+\begin{frame}{Cross-Referencing with \texttt{hyperref}}
+
+  The \texttt{hyperref} package enhances cross-referencing by creating hyperlinks. Include it in the preamble:
+
+  \begin{example}
+    \begin{itemize}
+      \item[] \texttt{\textbackslash usepackage\{hyperref\}}
+    \end{itemize}
+  \end{example}
+
+  Now, when you use \texttt{\textbackslash ref}, the text becomes clickable in the PDF.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Headers and Footers in \LaTeX}
+
+  \begin{itemize}
+    \item Headers and footers provide a way to customize the top and bottom parts of your document.
+    \item In \LaTeX, you can control these elements using packages and commands.
+    \item We will explore the customization of headers and footers, including predefined styles and the use of the \texttt{fancyhdr} package.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Page Styles}
+  \LaTeX{} provides several predefined page styles, including:
+
+  \begin{itemize}
+    \item \texttt{plain}
+    \item \texttt{headings}
+    \item \texttt{empty}
+  \end{itemize}
+
+  These styles define the layout of headers and footers on different pages. and they can be used by
+  specifying the style in the preamble using \texttt{\textbackslash pagestyle}.
+\end{frame}
+
+
+\begin{frame}{Customizing Headers and Footers}
+  The \texttt{fancyhdr} package is commonly used to customize headers and footers. It provides commands like:
+
+  \begin{itemize}
+    \item \texttt{\textbackslash pagestyle\{fancy\}}
+    \item \texttt{\textbackslash fancyhead\{...\}}
+    \item \texttt{\textbackslash fancyfoot\{...\}}
+  \end{itemize}
+
+  Customize content, positions, and formatting as needed.
+\end{frame}
+
+\begin{frame}{Example: Custom Header and Footer}
+  Example of customizing headers and footers using \texttt{fancyhdr}:
+
+  \begin{example}
+    \begin{itemize}
+      \item[] \texttt{\textbackslash usepackage\{fancyhdr\}}
+      \item[] \texttt{\textbackslash pagestyle\{fancy\}}
+      \item[] \texttt{\textbackslash fancyhead[Location]\{...\}}
+      \item[] \texttt{\textbackslash fancyfoot[Location]\{...\}}
+    \end{itemize}
+  \end{example}
+
+  The location value can be \texttt{L, C, R} or more!
+\end{frame}
+
+\end{document}

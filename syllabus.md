@@ -1,0 +1,56 @@
+## Computer Workshop Syllabus
+- Intro to Computer Workshop (1 session)
+    - Course description
+    - Introduction of syllabus
+    - Touch typing
+        - Resources on how to improve
+        - Tips and tricks
+    - Debugging
+        - Different types of debugging
+        - Debugging tools in VsCode
+        - Debugging procedure
+    - Basic command line knowledge
+        - Shells
+        - Arguments
+- Git (2 sessions)
+    - Introduction to Version Control
+    - Setting up Git
+    - Creating a Git repo
+    - Git workflow
+    - Working with remote repositories
+    - Collaborative work
+    - **Git best practices**
+    - Extra tools and GUIs
+    - Extra resources to learn
+- Latex (1/2 Session)
+    - Intro to Latex
+        - TexLive
+        - Packages
+    - Setting up in vscode
+    - Basic Document Setup
+    - Document structure
+    - Basic Mathematics
+    - Farsi Setup
+- GNU/Linux + Bash (2 Sesssions)
+    - Why GNU/Linux?
+    - What is Unix?
+    - Brief history of Unix + GNU/Linux + Figures of GNU/Linux
+    - Unix philosophy
+    - Distrobutions
+    - How to install endeavorOS/Parch
+    - Filesystem
+    - Package managment
+    - Building packages from AUR
+    - Shells
+    - Basic commands (cd/touch/ls/grep?/piping)
+    - Text Editors
+    - Bashscripting
+    - Extra resources (Luke smith/DistroTube/Mental Outlaw)
+- Clean Code (2 Sessions)
+    - What is clean code 
+    - Why Clean code?
+    - Meaningful Names
+    - Functions
+    - Comments
+    - Formatting
+    - Objects and Data Structures
